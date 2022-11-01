@@ -1,0 +1,13 @@
+//-->Sector para importar distintos archivos
+//-->Elementos Genericos
+@import "./Componentes/html";
+@import "./Componentes/body";
+@import "./Componentes/header";
+@import "./Componentes/footer";
+
+//-->Index
+@import "./Index/index";
+@import "./Componentes/";
+
+//--->Agregamos los media / responsive
+@import "./Media/media";

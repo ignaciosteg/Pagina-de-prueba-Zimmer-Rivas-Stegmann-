@@ -1,0 +1,273 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    background-color:#0f172a;
+    padding: 15px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1; 
+    font-size: 18px;
+}
+
+.header__contenido{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header__titulo{
+    color: #22c55e;
+}
+
+.header__titulo:hover::after{
+    content: 'Inicio';
+    margin-left: 8px;
+    font-size: 14px;
+    color: #e2e8f0;
+}
+
+.header__navbar{
+    display: flex;
+    align-items: center;
+}
+
+.header__navbar li{
+    margin: 0 15px;
+}
+
+.header__navbar li:last-child{
+    border: 1px solid #22c55e;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 0;
+}
+
+.header__navbar li:active{
+    transform: scale(0.9);
+}
+
+.header__navbar li a{
+    color: #e2e8f0;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.header__navbar li a:hover{
+    color: #22c55e;
+}
+
+a{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
+
+h3{
+    font-size: 22px;
+}
+
+/* Productos */
+#contenedor-principal{
+    width:90%;
+    margin-left: 7%;
+    margin-right: auto;
+}
+
+
+#tienda{
+    width:90%;
+    height: 100%;
+}
+
+#lista_productos{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.productos{
+    width:200px;
+    border:1px solid grey;
+    border-radius: 20px;
+    padding:2%;
+    margin-left: 2%;
+    margin-top: 2%;
+    text-align: center;
+}
+
+.productos img{
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;  
+}
+
+.addToList{
+    color: black;
+    border: 1px solid #22c55e;
+    font-size: 15px;
+    margin-top: 5px;
+    padding: 8px;
+    border-radius: 15px;
+}
+
+.addToList:hover{
+    color: #22c55e;
+    background-color: #0f172a;
+}
+
+
+/* Pie de Página */
+footer{
+    margin-top: 10px;
+    background-color: #0f172a;
+    padding: 15px 10px;
+}
+
+
+
+
+/* osiblemene te*/
+
+.addToList{
+    margin-top:10px;
+    border-radius: 20px;
+    padding:2%;
+    width:100%;
+    cursor:pointer;
+}
+#cartList {
+    width:20%;
+    /* margin-left: 90%; */
+    /* Arriba | Derecha | Abajo | Izquierda */
+    margin: -600px 35px 0 90%;
+}
+.productInList, #cartList {
+    padding:2%;
+}
+.productInList{
+    display:flex;
+    margin-top:2%;
+    border-bottom:1px solid grey;
+}
+.productInList .productImg{
+    
+    width: 30%;
+    text-align: center;
+}
+.productImg img{
+    width:50%;
+}
+.productInList .productName{
+    width:60%;
+    margin-left: 3%;
+}
+
+.productInList .productPrice{
+    width:30%;
+    margin-left: 3%;
+    text-align: right;
+}
+
+#total{
+    margin-top:5%;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right:auto;
+    font-weight: bold;
+    padding: 2%;
+    color: black;
+}
+
+
+
+@media (min-width:850px) {
+    header{
+        position: relative;
+        width: 100%;
+    }
+    .header__contenido{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .header__navbar{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+    /*Productos*/
+    #contenedor-principal{
+        width:90%;
+        margin-left: 7%;
+        margin-right: auto;
+    }
+
+    /*Pie de Página*/
+
+    footer{
+        margin-top: 5%;
+        background-color: #0f172a;
+        padding: 15px 10px;
+    }
+
+    /*Menù lateral*/
+	#btn-menu{
+		display: none;
+	}
+	.container-menu{
+		position: absolute;
+		background: rgba(0,0,0,0.5);
+		width: 100%;
+		height: 100vh;
+		top: 0;left: 0;
+		transition: all 500ms ease;
+		opacity: 0;
+		visibility: hidden;
+        color: #0f172a;
+	}
+	#btn-menu:checked ~ .container-menu{
+		opacity: 1;
+		visibility: visible;
+        
+	}
+	.cont-menu{
+		width: 100%;
+		max-width: 250px;
+		background: white;
+		height: 100vh;
+		position: relative;
+		transition: all 500ms ease;
+		transform: translateX(-100%);
+	}
+	#btn-menu:checked ~ .container-menu .cont-menu{
+		transform: translateX(0%);
+	}
+	.cont-menu nav{
+		transform: translateY(15%);
+	}
+	.cont-menu nav a{
+		display: block;
+		text-decoration: none;
+		padding: 20px;
+		color: #c7c7c7;
+		border-left: 5px solid transparent;
+		transition: all 400ms ease;
+	}
+	.cont-menu nav a:hover{
+		border-left: 5px solid #c7c7c7;
+		background: #1f1f1f;
+	}
+	.cont-menu label{
+		position: absolute;
+		right: 5px;
+		top: 10px;
+		color: #fff;
+		cursor: pointer;
+		font-size: 18px;
+	}
+}
